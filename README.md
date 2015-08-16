@@ -4,10 +4,11 @@
 
 This is a simple, skeleton application using the Phalcon2. 
 This application is meant to be used as a starting place.
+Its built on top of https://github.com/mamuz/phalcon-application which simplifies the bootstrap.
 
 ## Requirements
 
-- Phalcon2 is needed, follow install steps at https://github.com/phalcon/cphalcon
+Phalcon2 is needed, follow install steps at https://github.com/phalcon/cphalcon
 
 ## Install
 
