@@ -1,6 +1,6 @@
 {
   "name": "mamuz/phalcon-skeleton",
-  "description": "",
+  "description": "Simple, skeleton application using the Phalcon2 to have a good starting place",
   "type": "project",
   "minimum-stability": "dev",
   "prefer-stable": true,
