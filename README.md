@@ -32,6 +32,8 @@ After changing namespace you have to update composer lock file and the autoloade
 composer update --lock
 ```
 
+You should also remove the config cache file inside `./data/cache`.
+
 ## Web server setup
 
 Check https://docs.phalconphp.com/en/latest/reference/install.html#installation-notes
