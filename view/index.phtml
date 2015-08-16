@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Example</title>
+</head>
+<body>
+
+<h1>This is main layout!</h1>
+
+<?php echo $this->getContent(); ?>
+
+</body>
+</html>
