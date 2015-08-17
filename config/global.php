@@ -4,11 +4,6 @@ return [
     'dispatcher' => [
         'controllerDefaultNamespace' => 'PhalconSkeleton\Application\Controller',
         'taskDefaultNamespace'       => 'PhalconSkeleton\Application\Task',
-        'errorForwarding'            => [
-            'controller'     => 'error',
-            'notFoundAction' => 'notFound',
-            'errorAction'    => 'fatal',
-        ],
     ],
     'view'       => [
         'templatePath' => './view/',
