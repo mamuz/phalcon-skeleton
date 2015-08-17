@@ -3,23 +3,24 @@
 namespace Phpg\Application\Service;
 
 use Phalcon\Di;
-use Phalcon\Dispatcher as PhalconDispatcher;
+use Phalcon\Dispatcher;
 use Phalcon\Events\Event;
 use Phalcon\Mvc;
 use Phapp\Application\Service\InjectableInterface;
 
-class Dispatcher implements InjectableInterface
+class ErrorHandler implements InjectableInterface
 {
     public static function injectTo(Di $di)
     {
-        /** @var \Phalcon\Mvc\Dispatcher $dispatcher */
+        /** @var Dispatcher $dispatcher */
         $dispatcher = $di->getShared('dispatcher');
         $dispatcher->getEventsManager()->attach(
             'dispatch:beforeException',
-            function (Event $event, PhalconDispatcher $dispatcher, \Exception $e) {
+            function (Event $event, Dispatcher $dispatcher, \Exception $e) {
+                /** @var \Phalcon\Logger\AdapterInterface $logger */
                 $logger = $dispatcher->getDI()->get('logger');
                 $logger->error($e->getMessage());
-                if ($dispatcher instanceof \Phalcon\Mvc\Dispatcher) {
+                if ($dispatcher instanceof Mvc\Dispatcher) {
                     if ($e instanceof Mvc\Dispatcher\Exception) {
                         $action = 'notFound';
                     } else {

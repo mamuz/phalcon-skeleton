@@ -18,7 +18,8 @@ return [
         ],
     ],
     'services'   => [
-        'logger' => 'PhalconSkeleton\Application\Service\Logger',
+        'logger'       => 'PhalconSkeleton\Application\Service\Logger',
+        'errorhandler' => 'PhalconSkeleton\Application\Service\ErrorHandler',
     ],
     'loggers'    => [
         'file' => [
