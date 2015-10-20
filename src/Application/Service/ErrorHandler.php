@@ -1,6 +1,6 @@
 <?php
 
-namespace Phpg\Application\Service;
+namespace PhalconSkeleton\Application\Service;
 
 use Phalcon\Di;
 use Phalcon\Dispatcher;
