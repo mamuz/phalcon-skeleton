@@ -4,6 +4,8 @@ declare(strict_types = 1);
 
 namespace PhalconSkeleton\Application\Controller;
 
+use Phalcon\Http\Response;
+
 class Error extends Base
 {
     public function indexAction()
@@ -18,9 +20,9 @@ class Error extends Base
         $this->getLogger()->error($e->getMessage(), ['exception' => $e]);
 
         if ($e instanceof \Phalcon\Mvc\Dispatcher\Exception) {
-            $this->response->setStatusCode(404, "Not Found");
-        } else {
-            $this->response->setStatusCode(500, "Internal Server Error");
+            return new Response("Requested page was not found", 404, "Not Found");
         }
+        
+        return new Response("An error occurred. Please try again later.", 500, "Internal Server Error");
     }
 }
