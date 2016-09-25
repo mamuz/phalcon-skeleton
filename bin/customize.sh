@@ -14,7 +14,7 @@ find . -name "*.php" -print0 | xargs -0 sed -i -e "s/PhalconSkeleton/$FQCN/g"
 sed -i -e "s:mamuz/phalcon-skeleton:$COMPOSERNAMESPACE:g" ./composer.json
 sed -i -e "s/PhalconSkeleton/$FQCN/g" ./composer.json
 sed -i -e "s/PROJECT_NAME/$FQCN/g" ./bin/skeleton-templates/README.md
-sed -i -e "s/PROJECT_DESCRIPTION/$PROJECTDESCRIPTION/g" ./bin/skeleton-templates
+sed -i -e "s/PROJECT_DESCRIPTION/$PROJECTDESCRIPTION/g" ./bin/skeleton-templates/README.md
 
 mv -f ./bin/skeleton-templates/* .
 rm -rf ./bin/customize.sh ./bin/skeleton-templates
