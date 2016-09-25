@@ -1,6 +1,6 @@
 {
   "name": "mamuz/phalcon-skeleton",
-  "description": "Simple, skeleton application using the Phalcon2 to have a good starting place",
+  "description": "Simple skeleton application using the Phalcon3 Framework",
   "type": "project",
   "minimum-stability": "dev",
   "prefer-stable": true,
@@ -8,20 +8,12 @@
     "optimize-autoloader": true
   },
   "require": {
-    "php": ">=5.4",
-    "ext-phalcon": ">=2.0.0",
-    "mamuz/phalcon-application": "~0.1"
+    "mamuz/phalcon-application": "~2.0",
+    "monolog/monolog": "~1.21"
   },
   "autoload": {
     "psr-4": {
       "PhalconSkeleton\\": "src/"
     }
-  },
-  "scripts": {
-    "post-install-cmd": [
-      "echo \"development\" > ./ENV",
-      "mkdir -pm 777 ./data/cache",
-      "mkdir -pm 777 ./data/log"
-    ]
   }
 }

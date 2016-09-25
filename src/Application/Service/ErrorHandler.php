@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace PhalconSkeleton\Application\Service;
 
 use Phalcon\Di;
@@ -16,24 +18,20 @@ class ErrorHandler implements InjectableInterface
         $dispatcher = $di->getShared('dispatcher');
         $dispatcher->getEventsManager()->attach(
             'dispatch:beforeException',
-            function (Event $event, Dispatcher $dispatcher, \Exception $e) {
-                /** @var \Phalcon\Logger\AdapterInterface $logger */
-                $logger = $dispatcher->getDI()->get('logger');
-                $logger->error($e->getMessage());
+            function (Event $event, Dispatcher $dispatcher, \Throwable $e) {
                 if ($dispatcher instanceof Mvc\Dispatcher) {
-                    if ($e instanceof Mvc\Dispatcher\Exception) {
-                        $action = 'notFound';
-                    } else {
-                        $action = 'fatal';
-                        if ($dispatcher->getDI()->has('response')) {
-                            /** @var \Phalcon\Http\Response $response */
-                            $response = $dispatcher->getDI()->get('response');
-                            $response->setStatusCode(500, "Internal Server Error");
-                        }
-                    }
                     $dispatcher->setNamespaceName($dispatcher->getDefaultNamespace());
-                    $dispatcher->forward(['controller' => 'error', 'action' => $action]);
+                    $dispatcher->forward([
+                        'controller' => 'error',
+                        'action'     => 'index',
+                        'params'     => ['exception' => $e],
+                    ]);
+                } else {
+                    /** @var \Psr\Log\LoggerInterface $logger */
+                    $logger = $dispatcher->getDI()->get('logger');
+                    $logger->error($e->getMessage(), ['exception' => $e]);
                 }
+
                 return false;
             }
         );
