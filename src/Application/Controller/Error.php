@@ -8,7 +8,7 @@ class Error extends Base
 {
     public function indexAction()
     {
-        if (!$this->dispatcher->hasParam('exception')) {
+        if (!$this->dispatcher->wasForwarded() || !$this->dispatcher->hasParam('exception')) {
             $this->dispatcher->forward('index', 'index');
             return;
         }
