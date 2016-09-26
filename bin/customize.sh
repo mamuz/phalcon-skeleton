@@ -13,7 +13,7 @@ fi
 find . -name "*.php" -print0 | xargs -0 sed -i -e "s/PhalconSkeleton/$FQCN/g"
 sed -i -e "s:mamuz/phalcon-skeleton:$COMPOSERNAMESPACE:g" ./composer.json
 sed -i -e "s/PhalconSkeleton/$FQCN/g" ./composer.json
-sed -i -e "s/Simple skeleton application using the Phalcon3 Framework"/$PROJECTDESCRIPTION/g" ./composer.json
+sed -i -e "s/Simple skeleton application using the Phalcon3 Framework/$PROJECTDESCRIPTION/g" ./composer.json
 sed -i -e "s/PROJECT_NAME/$FQCN/g" ./bin/skeleton-templates/README.md
 sed -i -e "s/PROJECT_DESCRIPTION/$PROJECTDESCRIPTION/g" ./bin/skeleton-templates/README.md
 
