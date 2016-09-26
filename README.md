@@ -28,7 +28,7 @@ It will ask you for assigning following changes:
 
     Composer Autoloader is mapping as `"autoload": {"psr-4": {"PhalconSkeleton\\": "src/"}}`
 
-    e.g customizing the identifier to `Autoloader` will lead to `"autoload": {"psr-4": {"Application\\": "src/"}}`,
+    e.g customizing the identifier to `Application` will lead to `"autoload": {"psr-4": {"Application\\": "src/"}}`,
     according to that all FQCN of all classes will be changed.
 
 2. `Enter composer namespace`
