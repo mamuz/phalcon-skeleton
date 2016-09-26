@@ -65,6 +65,6 @@ https://github.com/mamuz/phalcon-skeleton/blob/master/src/Application/Service/Er
 First of all create a Factory inside `src/Application/Service`, register that factory to services in
 [`application config`](https://github.com/mamuz/phalcon-skeleton/blob/master/config/application.php).
 
-After that you should add a `Getter` for that new service to
+After that you should add a `Getter` for that to
 [`Service Aware Trait`](https://github.com/mamuz/phalcon-skeleton/blob/master/src/Application/Service/AwareTrait.php),
 which make your life easier for fetching those ones inside your controllers.
