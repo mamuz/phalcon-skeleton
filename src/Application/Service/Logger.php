@@ -15,7 +15,7 @@ class Logger implements InjectableInterface
             'logger',
             function () use ($di) {
                 $logger = new \Monolog\Logger('PhalconSkeleton');
-                $logger->pushHandler(new \Monolog\Handler\StreamHandler('php://stderr'));
+                $logger->pushHandler(new \Monolog\Handler\StreamHandler('php://stdout'));
                 return $logger;
             }
         );
