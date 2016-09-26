@@ -49,3 +49,22 @@ It will ask you for assigning following changes:
 
 Please check https://github.com/mamuz/phalcon-application for detailed informations about bootstrapping.
 For Phalcon usages in general please visit https://docs.phalconphp.com.
+
+### Logging
+
+This application uses [`Monolog`](https://github.com/Seldaek/monolog) as a logger, you can customize it in
+https://github.com/mamuz/phalcon-skeleton/blob/master/src/Application/Service/Logger.php
+
+### Error Handling
+
+Error Handling with Phalcon's MVC is implemented in
+https://github.com/mamuz/phalcon-skeleton/blob/master/src/Application/Service/ErrorHandler.php
+
+### Adding new Services
+
+First of all create a Factory inside `src/Application/Service`, register that factory to services in
+[`application config`](https://github.com/mamuz/phalcon-skeleton/blob/master/config/application.php).
+
+After that you should add a `Getter` for that new service to
+[`Service Aware Trait`](https://github.com/mamuz/phalcon-skeleton/blob/master/src/Application/Service/AwareTrait.php),
+which make your life easier for fetching those ones inside your controllers.
