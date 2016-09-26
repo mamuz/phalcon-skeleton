@@ -11,7 +11,7 @@ class Error extends Base
     public function indexAction()
     {
         if (!$this->dispatcher->wasForwarded() || !$this->dispatcher->hasParam('exception')) {
-            $this->dispatcher->forward('index', 'index');
+            $this->dispatcher->forward(["controller" => "index", "action" => "index"]);
             return;
         }
 
