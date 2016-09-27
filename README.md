@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a application skeleton for Phalcon3 Framework.
+This is an application skeleton for Phalcon3 Framework.
 This application is meant to be used as a starting place.
 It's built on top of https://github.com/mamuz/phalcon-application which simplifies application bootstrapping.
 
