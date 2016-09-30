@@ -20,7 +20,7 @@ class Error extends Base
         $this->getLogger()->error($e->getMessage(), ['exception' => $e]);
 
         if ($e instanceof \Phalcon\Mvc\Dispatcher\Exception) {
-            $response =  new Response("Requested page was not found", 404, "Not Found");
+            $response = new Response("Requested page was not found", 404, "Not Found");
         } else {
             $response = new Response("An error occurred. Please try again later.", 500, "Internal Server Error");
         }
