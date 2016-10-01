@@ -11,8 +11,7 @@ class Error extends Base
     public function indexAction()
     {
         if (!$this->dispatcher->wasForwarded() || !$this->dispatcher->hasParam('exception')) {
-            $this->dispatcher->forward(["controller" => "index", "action" => "index"]);
-            return;
+            return new Response("Requested page was not found", 404, "Not Found");
         }
 
         /** @var \Exception $e */
