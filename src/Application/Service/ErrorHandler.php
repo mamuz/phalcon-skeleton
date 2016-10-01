@@ -30,6 +30,7 @@ class ErrorHandler implements InjectableInterface
                     /** @var \Psr\Log\LoggerInterface $logger */
                     $logger = $dispatcher->getDI()->get('logger');
                     $logger->error($e->getMessage(), ['exception' => $e]);
+                    exit($e->getCode() > 0 ? (int) $e->getCode() : 1);
                 }
 
                 return false;
