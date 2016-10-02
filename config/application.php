@@ -25,7 +25,7 @@ $config = [
 
 set_error_handler(function ($severity, $message, $file, $line) {
     if (error_reporting() & $severity) {
-        throw new ErrorException($message, $severity, 1, $file, $line);
+        throw new \ErrorException($message, $severity, 1, $file, $line);
     }
 });
 
