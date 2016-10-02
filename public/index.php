@@ -1,15 +1,7 @@
 <?php
 
-set_error_handler(
-    function ($severity, $message, $file, $line) {
-        if (error_reporting() & $severity) {
-            throw new ErrorException($message, $severity, 1, $file, $line);
-        }
-    }
-);
-
 chdir(dirname(__DIR__));
-
 include './vendor/autoload.php';
+$config = require './config/application.php';
 
-Phapp\Application\Bootstrap::init(include './config/application.php')->runApplicationOn($_SERVER);
+Phapp\Application\Bootstrap::init($config)->runApplicationOn($_SERVER);

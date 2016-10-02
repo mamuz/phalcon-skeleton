@@ -11,13 +11,6 @@ class Logger implements InjectableInterface
 {
     public static function injectTo(Di $di)
     {
-        $di->setShared(
-            'logger',
-            function () use ($di) {
-                $logger = new \Monolog\Logger('PhalconSkeleton');
-                $logger->pushHandler(new \Monolog\Handler\StreamHandler('php://stdout'));
-                return $logger;
-            }
-        );
+        $di->setShared('logger', $di->get('config')['logger']);
     }
 }

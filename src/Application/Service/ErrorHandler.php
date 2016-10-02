@@ -26,13 +26,9 @@ class ErrorHandler implements InjectableInterface
                         'action'     => 'index',
                         'params'     => ['exception' => $e],
                     ]);
-                } else {
-                    /** @var \Psr\Log\LoggerInterface $logger */
-                    $logger = $dispatcher->getDI()->get('logger');
-                    $logger->error($e->getMessage(), ['exception' => $e]);
-                }
 
-                return false;
+                    return false;
+                }
             }
         );
     }

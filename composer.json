@@ -8,7 +8,7 @@
     "optimize-autoloader": true
   },
   "require": {
-    "mamuz/phalcon-application": "~2.0",
+    "mamuz/phalcon-application": "~2.2",
     "monolog/monolog": "~1.21"
   },
   "autoload": {
