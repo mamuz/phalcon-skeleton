@@ -53,7 +53,7 @@ For Phalcon usages in general please visit https://docs.phalconphp.com.
 ### Logging
 
 This application uses [`Monolog`](https://github.com/Seldaek/monolog) as a logger, you can customize it in
-https://github.com/mamuz/phalcon-skeleton/blob/master/src/Application/Service/Logger.php
+https://github.com/mamuz/phalcon-skeleton/blob/master/config/application.php
 
 ### Error Handling
 
