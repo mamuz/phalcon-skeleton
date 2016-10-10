@@ -31,9 +31,7 @@ set_error_handler(function ($severity, $message, $file, $line) {
 
 set_exception_handler(function (\Throwable $e) use ($config) {
     $config['logger']()->error($e->getMessage(), ['exception' => $e]);
-    if (php_sapi_name() == 'cli') {
-        exit($e->getCode() > 0 ? (int)$e->getCode() : 1);
-    }
+    exit(255);
 });
 
 return $config;
